@@ -1,212 +1,242 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Get In Touch - AI Automation Services</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apex Realty Group - Lead Capture</title>
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --primary-hover: #1d4ed8;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text: #334155;
+            --border: #cbd5e1;
+        }
 
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-    }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
 
-    .container {
-      background: white;
-      max-width: 600px;
-      width: 100%;
-      border-radius: 16px;
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-      overflow: hidden;
-    }
+        .container {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            width: 100%;
+            max-width: 550px;
+            box-sizing: border-box;
+        }
 
-    .header {
-      background: #1e3a8a;
-      color: white;
-      padding: 30px 40px;
-      text-align: center;
-    }
+        h2 {
+            margin-top: 0;
+            color: var(--primary);
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 24px;
+        }
 
-    .header h1 {
-      font-size: 28px;
-      margin-bottom: 8px;
-    }
+        .form-group {
+            margin-bottom: 20px;
+        }
 
-    .header p {
-      opacity: 0.9;
-      font-size: 16px;
-    }
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 600;
+            font-size: 14px;
+        }
 
-    .form-container {
-      padding: 40px;
-    }
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-size: 15px;
+            box-sizing: border-box;
+            transition: border-color 0.2s;
+        }
 
-    .form-group {
-      margin-bottom: 20px;
-    }
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
 
-    label {
-      display: block;
-      margin-bottom: 8px;
-      font-weight: 600;
-      color: #374151;
-    }
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
 
-    input, textarea {
-      width: 100%;
-      padding: 14px 16px;
-      border: 2px solid #e5e7eb;
-      border-radius: 8px;
-      font-size: 16px;
-      transition: all 0.3s ease;
-    }
+        .divider {
+            text-align: center;
+            margin: 25px 0;
+            position: relative;
+        }
 
-    input:focus, textarea:focus {
-      border-color: #3b82f6;
-      outline: none;
-      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
-    }
+        .divider::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 100%;
+            height: 1px;
+            background-color: var(--border);
+            z-index: 1;
+        }
 
-    textarea {
-      resize: vertical;
-      min-height: 120px;
-    }
+        .divider span {
+            background-color: var(--card-bg);
+            padding: 0 15px;
+            position: relative;
+            z-index: 2;
+            font-size: 13px;
+            color: #64748b;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
 
-    button {
-      width: 100%;
-      padding: 16px;
-      background: #2563eb;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      font-size: 18px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      margin-top: 10px;
-    }
+        button {
+            width: 100%;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
 
-    button:hover {
-      background: #1d4ed8;
-      transform: translateY(-2px);
-    }
+        button:hover {
+            background-color: var(--primary-hover);
+        }
 
-    .success {
-      display: none;
-      background: #d1fae5;
-      color: #065f46;
-      padding: 20px;
-      border-radius: 8px;
-      text-align: center;
-      margin-top: 20px;
-    }
+        #statusMessage {
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 6px;
+            font-size: 14px;
+            text-align: center;
+            display: none;
+        }
 
-    .loading {
-      display: none;
-      text-align: center;
-      margin-top: 10px;
-      color: #64748b;
-    }
-  </style>
+        .success { background-color: #dcfce7; color: #166534; }
+        .error { background-color: #fee2e2; color: #991b1b; }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <div class="header">
-      <h1>Let's Build Something Great</h1>
-      <p>Tell us about your AI automation needs</p>
-    </div>
 
-    <div class="form-container">
-      <form id="leadForm">
+<div class="container">
+    <h2>Apex Realty Lead Capture</h2>
+    
+    <form id="leadForm">
+        <!-- Structured Fields -->
         <div class="form-group">
-          <label for="name">Full Name *</label>
-          <input type="text" id="name" required placeholder="John Doe">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Sarah Jenkins">
         </div>
 
         <div class="form-group">
-          <label for="email">Business Email *</label>
-          <input type="email" id="email" required placeholder="john@company.com">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="sarah@example.com">
         </div>
 
         <div class="form-group">
-          <label for="phone">Phone Number</label>
-          <input type="tel" id="phone" placeholder="+91 98765 43210">
+            <label for="budget">Max Budget ($)</label>
+            <input type="text" id="budget" name="budget" placeholder="e.g., $1.2M">
         </div>
 
         <div class="form-group">
-          <label for="message">Your Requirements / Message *</label>
-          <textarea id="message" required placeholder="I'm looking for AI solutions to automate lead generation for my business in Bengaluru..."></textarea>
+            <label for="location">Desired Location</label>
+            <input type="text" id="location" name="location" placeholder="e.g., Downtown Boston">
         </div>
 
-        <button type="submit" id="submitBtn">Submit Inquiry</button>
-      </form>
+        <div class="form-group">
+            <label for="urgency">Timeline / Urgency</label>
+            <input type="text" id="urgency" name="urgency" placeholder="e.g., Within 2-3 weeks">
+        </div>
 
-      <div class="loading" id="loading">Processing your request...</div>
-      <div class="success" id="success">✅ Thank you! Your inquiry has been received. We'll get back to you soon.</div>
-    </div>
-  </div>
+        <!-- Optional Raw Text Fallback -->
+        <div class="divider">
+            <span>OR</span>
+        </div>
 
-  <script>
-    const WEBHOOK_URL = "https://cloud.activepieces.com/api/v1/webhooks/bpkwFm1pdh2weyENCbcxs";
+        <div class="form-group">
+            <label for="raw_text">Paste Raw Lead Paragraph</label>
+            <textarea id="raw_text" name="raw_text" placeholder="Hey! My name is Sarah Jenkins. Me and my husband are looking to move ASAP..."></textarea>
+        </div>
 
-    const form = document.getElementById('leadForm');
-    const submitBtn = document.getElementById('submitBtn');
-    const loading = document.getElementById('loading');
-    const success = document.getElementById('success');
+        <button type="submit" id="submitBtn">Submit Lead</button>
+        <div id="statusMessage"></div>
+    </form>
+</div>
 
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
+<script>
+    // 1. REPLACE THIS URL WITH YOUR ACTUAL ACTIVEPIECES WEBHOOK URL
+    const WEBHOOK_URL = 'https://cloud.activepieces.com/api/v1/webhooks/bpkwFm1pdh2weyENCbcxs';
 
-      // Disable button and show loading
-      submitBtn.disabled = true;
-      submitBtn.textContent = "Submitting...";
-      loading.style.display = "block";
+    document.getElementById('leadForm').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        const submitBtn = document.getElementById('submitBtn');
+        const statusMessage = document.getElementById('statusMessage');
+        
+        // Disable button while processing
+        submitBtn.disabled = true;
+        submitBtn.innerText = 'Processing...';
+        statusMessage.style.display = 'none';
 
-      const formData = {
-        name: document.getElementById('name').value.trim(),
-        email: document.getElementById('email').value.trim(),
-        phone: document.getElementById('phone').value.trim(),
-        message: document.getElementById('message').value.trim(),
-        timestamp: new Date().toISOString(),
-        source: "GitHub Pages Lead Form"
-      };
+        // Extract values from form
+        const payload = {
+            name: document.getElementById('name').value.trim(),
+            email: document.getElementById('email').value.trim(),
+            budget: document.getElementById('budget').value.trim(),
+            location: document.getElementById('location').value.trim(),
+            urgency: document.getElementById('urgency').value.trim(),
+            raw_text: document.getElementById('raw_text').value.trim()
+        };
 
-      try {
-        const response = await fetch(WEBHOOK_URL, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(formData)
-        });
+        try {
+            // Send POST request to Activepieces Catch Webhook
+            const response = await fetch(WEBHOOK_URL, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(payload)
+            });
 
-        if (response.ok) {
-          // Show success message
-          form.style.display = "none";
-          success.style.display = "block";
-        } else {
-          alert("Failed to submit. Please try again.");
+            if (response.ok) {
+                statusMessage.className = 'success';
+                statusMessage.innerText = 'Success! Lead data sent to automation.';
+                statusMessage.style.display = 'block';
+                document.getElementById('leadForm').reset();
+            } else {
+                throw new Error(`Server responded with status: ${response.status}`);
+            }
+        } catch (error) {
+            statusMessage.className = 'error';
+            statusMessage.innerText = 'Failed to submit lead. Check Webhook URL setup.';
+            statusMessage.style.display = 'block';
+            console.error('Automation Error:', error);
+        } finally {
+            submitBtn.disabled = false;
+            submitBtn.innerText = 'Submit Lead';
         }
-      } catch (error) {
-        console.error("Error:", error);
-        alert("Connection error. Please check your internet and try again.");
-      } finally {
-        // Reset button
-        submitBtn.disabled = false;
-        submitBtn.textContent = "Submit Inquiry";
-        loading.style.display = "none";
-      }
     });
-  </script>
+</script>
+
 </body>
 </html>
